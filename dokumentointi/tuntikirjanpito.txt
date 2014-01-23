@@ -20,3 +20,7 @@ VIIKKO 2
 23.1.2014
 1h 30min - Laitoksella neuvojen kysyminen, tiedostonlukijan + testin säätö, turha testikansio poistettu
 
+1h - Tiedostoon tallentajan + testien tekeminen, turha testikansio poistettu uudelleen, varjorepokansio poistettu, 
+alkuvaiheen luokkakaavio tehty, README siivottu, pakettirakenne korjattu ohjeiden mukaan, aihemäärittely päivitetty
+
+
