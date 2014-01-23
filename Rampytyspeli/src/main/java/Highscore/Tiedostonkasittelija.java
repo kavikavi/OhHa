@@ -10,16 +10,17 @@ import java.util.Scanner;
 public class Tiedostonkasittelija {
     
     
-    public ArrayList<String> lueHighscore() throws FileNotFoundException {
+    public ArrayList<String> lueTiedosto(String tiedostopolku) throws FileNotFoundException {
         ArrayList<String> pistelista = new ArrayList<String>();
-        File pistetiedosto = new File("src/main/java/Highscore/Highscore.txt");
-        Scanner lukija = new Scanner(pistetiedosto);
+        File tiedosto = new File(tiedostopolku);
+        Scanner lukija = new Scanner(tiedosto);
         while (lukija.hasNextLine()) {
             String rivi = lukija.nextLine();
             pistelista.add(rivi);
         }
         return pistelista;
     } 
+    
     
     
 }
