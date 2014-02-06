@@ -43,7 +43,9 @@ YHT. 6h
 VIIKKO 4
 
 
-
+6.2.2014
+2h - Pajassa säätämistä: pelimoodin aloitus ja käyttöliittymän 
+asettaminen kuuntelemaan moodia. Ajastimen ihmettelyä.
 
 
 

@@ -10,6 +10,7 @@ import javax.swing.WindowConstants;
 import ohjelmalogiikka.peli.pelilogiikka.Nappain;
 import ohjelmalogiikka.peli.pelilogiikka.NappaintenKuuntelija;
 import ohjelmalogiikka.peli.pelilogiikka.Peli;
+import ohjelmalogiikka.peli.pelimoodit.Pelimoodi1;
 
 public class Kayttoliittyma implements Runnable {
     private JFrame frame;
@@ -18,6 +19,7 @@ public class Kayttoliittyma implements Runnable {
     private Nappain e;
     private Nappain r;
     private Peli peli;
+    private Pelimoodi1 moodi1;
     
     
 
@@ -27,6 +29,7 @@ public class Kayttoliittyma implements Runnable {
         this.e = new Nappain();
         this.r = new Nappain();
         this.peli = new Peli(q,w,e,r);
+        this.moodi1= new Pelimoodi1(q, w, e, r, peli);
         
     }
     
@@ -46,7 +49,7 @@ public class Kayttoliittyma implements Runnable {
     
     private void luoKomponentit(Container container) {
         container.setLayout(new BorderLayout());
-        container.add(new JLabel("teksti"));
+        container.add(moodi1);
     }
     
     public JFrame getFrame() {
