@@ -8,7 +8,10 @@ import java.util.Random;
 import java.util.TimerTask;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import ohjelmalogiikka.peli.pelilogiikka.Nappain;
+import ohjelmalogiikka.peli.pelilogiikka.NappaintenKuuntelija;
 import ohjelmalogiikka.peli.pelilogiikka.Peli;
 
 public class Pelimoodi1 extends JPanel {
@@ -48,7 +51,10 @@ public class Pelimoodi1 extends JPanel {
 
     private void luoKomponentit(String keski) {
         add(new JLabel(keski), BorderLayout.CENTER);
+        add(new JLabel(peli.pisteet() + ""), BorderLayout.SOUTH);
     }
+    
+    
     
 
     
