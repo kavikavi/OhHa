@@ -1,5 +1,5 @@
 
-package ohjelmalogiikka.Highscore;
+package rampytyspeli.ohjelmalogiikka.Highscore;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,7 +17,7 @@ public class Highscorelogiikka {
     
     public HashMap<Integer, String> haeHighscore() throws FileNotFoundException {
         HashMap<Integer, String> pisteet = new HashMap<Integer, String>();
-        for (String s : kasittelija.lueTiedosto("src/main/java/ohjelmalogiikka/Highscore/Highscore.txt")) {
+        for (String s : kasittelija.lueTiedosto("src/main/java/rampytyspeli/ohjelmalogiikka/Highscore/Highscore.txt")) {
             String[] osat = s.split(":");
             int piste = Integer.parseInt(osat[0]);
             pisteet.put(piste, osat[1]);
@@ -46,7 +46,7 @@ public class Highscorelogiikka {
         for (Integer integer : pistelista.keySet()) {
             tallennettava.add(integer + ":" + pistelista.get(integer));
         }
-        kasittelija.tallennaTiedostoon("src/main/java/ohjelmalogiikka/Highscore/Highscore.txt", tallennettava);
+        kasittelija.tallennaTiedostoon("src/main/java/rampytyspeli/ohjelmalogiikka/Highscore/Highscore.txt", tallennettava);
     }
     
     

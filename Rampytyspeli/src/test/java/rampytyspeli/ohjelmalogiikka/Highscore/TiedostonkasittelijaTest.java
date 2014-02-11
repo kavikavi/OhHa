@@ -1,6 +1,7 @@
 
-package ohjelmalogiikka.Highscore;
+package rampytyspeli.ohjelmalogiikka.Highscore;
 
+import rampytyspeli.ohjelmalogiikka.Highscore.Tiedostonkasittelija;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class TiedostonkasittelijaTest {
         lista.add("rivi1");
         lista.add("rivi2");
         lista.add("rivi3");
-        assertEquals(lista, kasittelija.lueTiedosto("src/test/java/ohjelmalogiikka/Highscore/testi.txt"));
+        assertEquals(lista, kasittelija.lueTiedosto("src/test/java/rampytyspeli/ohjelmalogiikka/Highscore/testi.txt"));
     }
     
     @Test 
@@ -27,8 +28,8 @@ public class TiedostonkasittelijaTest {
         lista.add("testi1");
         lista.add("testi2");
         lista.add("oispa kaljaa");
-        kasittelija.tallennaTiedostoon("src/test/java/ohjelmalogiikka/Highscore/testi2.txt", lista);
-        assertEquals(lista, kasittelija.lueTiedosto("src/test/java/ohjelmalogiikka/Highscore/testi2.txt"));
+        kasittelija.tallennaTiedostoon("src/test/java/rampytyspeli/ohjelmalogiikka/Highscore/testi2.txt", lista);
+        assertEquals(lista, kasittelija.lueTiedosto("src/test/java/rampytyspeli/ohjelmalogiikka/Highscore/testi2.txt"));
     }
     
     @Test 
@@ -38,8 +39,8 @@ public class TiedostonkasittelijaTest {
         lista.add("jou");
         lista.add("yo");
         lista.add("aivanhelvetinpitkäsana AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        kasittelija.tallennaTiedostoon("src/test/java/ohjelmalogiikka/Highscore/testi2.txt", lista);
-        assertEquals(lista, kasittelija.lueTiedosto("src/test/java/ohjelmalogiikka/Highscore/testi2.txt"));
+        kasittelija.tallennaTiedostoon("src/test/java/rampytyspeli/ohjelmalogiikka/Highscore/testi2.txt", lista);
+        assertEquals(lista, kasittelija.lueTiedosto("src/test/java/rampytyspeli/ohjelmalogiikka/Highscore/testi2.txt"));
     }
     
     

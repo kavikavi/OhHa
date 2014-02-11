@@ -1,9 +1,10 @@
 
-package ohjelmalogiikka.peli.pelilogiikka;
+package rampytyspeli.ohjelmalogiikka.peli.pelilogiikka;
 
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import rampytyspeli.Kayttoliittyma.Kayttoliittyma;
 
 
 public class NappaintenKuuntelija implements KeyListener {
@@ -13,21 +14,25 @@ public class NappaintenKuuntelija implements KeyListener {
     private Nappain e;
     private Nappain r;
     private Peli peli;
+    private Kayttoliittyma kayttis;
     
-    public NappaintenKuuntelija(Nappain q, Nappain w, Nappain e, Nappain r, Peli peli) {
+    public NappaintenKuuntelija(Nappain q, Nappain w, Nappain e, Nappain r, Peli peli, Kayttoliittyma kayttoliittyma) {
         this.q=q;
         this.w=w;
         this.e=e;
         this.r=r;
         this.peli=peli;
+        this.kayttis = kayttoliittyma;
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
+        
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
+        
     }
 
     @Override
@@ -62,5 +67,6 @@ public class NappaintenKuuntelija implements KeyListener {
             }
             System.out.println(peli.pisteet());
         }
+        kayttis.paivitaMoodi();
     }
 }

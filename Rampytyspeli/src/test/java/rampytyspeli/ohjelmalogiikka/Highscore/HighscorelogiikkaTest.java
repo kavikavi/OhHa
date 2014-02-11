@@ -1,7 +1,8 @@
 
-package ohjelmalogiikka.Highscore;
+package rampytyspeli.ohjelmalogiikka.Highscore;
 
 
+import rampytyspeli.ohjelmalogiikka.Highscore.Highscorelogiikka;
 import java.util.HashMap;
 import org.junit.Test;
 import static org.junit.Assert.*;

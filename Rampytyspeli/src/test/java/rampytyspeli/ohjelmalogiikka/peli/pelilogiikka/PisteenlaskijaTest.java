@@ -1,6 +1,7 @@
 
-package ohjelmalogiikka.peli.pelilogiikka;
+package rampytyspeli.ohjelmalogiikka.peli.pelilogiikka;
 
+import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Pisteenlaskija;
 import static org.junit.Assert.*;
 import org.junit.Test;
 

@@ -1,5 +1,5 @@
 
-package ohjelmalogiikka.peli.pelilogiikka;
+package rampytyspeli.ohjelmalogiikka.peli.pelilogiikka;
 
 
 public class Peli {
@@ -9,7 +9,13 @@ public class Peli {
     private Nappain e;
     private Nappain r;
     
-
+    /**
+     * 
+     * @param q
+     * @param w
+     * @param e
+     * @param r 
+     */
     public Peli(Nappain q, Nappain w, Nappain e, Nappain r) {
         this.laskuri = new Pisteenlaskija();
         this.q = q;

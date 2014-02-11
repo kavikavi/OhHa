@@ -43,9 +43,27 @@ YHT. 6h
 VIIKKO 4
 
 
+6.2.2014
+2h - Pajassa säätämistä: pelimoodin aloitus ja käyttöliittymän 
+asettaminen kuuntelemaan moodia. Ajastimen ihmettelyä.
+
+5h - Oikein mitään ei saatu mistään aikaan. Ajastinta, pelimoodien toimintaa ja käyttöliittymän rakennettea ihmetelty
+turhaan tuntikausia. Edes jonkinlaisen sisällön lisäämiseksi tehty highscorelogiikka ja sille testi. Myös jonkinlainen 
+sekvenssikaavio tehty.
+!!ONGELMAT!! -Kysy näistä pajassa
+* Javadoccia ei pystytty lisäämään laitoksen ohjeiden mukaisesti, properties->Build ei sisällä kuin Compilen. JavaDoc
+kuitenkin lisätty javalabran ohjeiden mukaan, ei hajuakaan mitä tapahtuu
+* Pit-raportin tekokaan ei onnistu; punaista virhetekstiä joka pellossa. Pit-raportti luo vain tyhjän kansion. pom.xml:ää 
+yritetty rukata vaikka kuinka kauan mutta ei siitäkään mitään tietty tullut kuin paha mieli.
+* Koodia ei edes sen vertaa että saisi tehtyä jostakin toisesta olennaisesta aiheesta sekvenssikaavion
+* Kaikki menee päin persettä
+
+YHT. 7h
+
+---------------------------------------------------------
 
 
-
+VIIKKO 5
 
 
 

@@ -1,7 +1,7 @@
 
-package ohjelmalogiikka;
+package rampytyspeli.ohjelmalogiikka;
 
-import Kayttoliittyma.Kayttoliittyma;
+import rampytyspeli.Kayttoliittyma.Kayttoliittyma;
 import javax.swing.SwingUtilities;
 
 

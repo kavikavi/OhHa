@@ -1,5 +1,5 @@
 
-package ohjelmalogiikka.peli.pelilogiikka;
+package rampytyspeli.ohjelmalogiikka.peli.pelilogiikka;
 
 
 public class Nappain {

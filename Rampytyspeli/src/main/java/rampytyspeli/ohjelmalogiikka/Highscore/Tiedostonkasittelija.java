@@ -1,5 +1,5 @@
 
-package ohjelmalogiikka.Highscore;
+package rampytyspeli.ohjelmalogiikka.Highscore;
 
 import java.io.File;
 import java.io.FileNotFoundException;

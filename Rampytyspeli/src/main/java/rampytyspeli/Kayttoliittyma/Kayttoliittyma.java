@@ -1,16 +1,16 @@
 
-package Kayttoliittyma;
+package rampytyspeli.Kayttoliittyma;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.WindowConstants;
-import ohjelmalogiikka.peli.pelilogiikka.Nappain;
-import ohjelmalogiikka.peli.pelilogiikka.NappaintenKuuntelija;
-import ohjelmalogiikka.peli.pelilogiikka.Peli;
-import ohjelmalogiikka.peli.pelimoodit.Pelimoodi1;
+import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Peli;
+import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Nappain;
+import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.NappaintenKuuntelija;
+import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Peli;
+import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi1;
 
 public class Kayttoliittyma implements Runnable {
     private JFrame frame;
@@ -58,6 +58,10 @@ public class Kayttoliittyma implements Runnable {
     }
     
     private void lisaaKuuntelijat() {
-        frame.addKeyListener(new NappaintenKuuntelija(q, w, e, r, peli));
+        frame.addKeyListener(new NappaintenKuuntelija(q, w, e, r, peli, this));
+    }
+    
+    public void paivitaMoodi() {
+        moodi1.paivitaPisteet();
     }
 }
