@@ -27,6 +27,17 @@ public class PeliTest {
     }
     
     @Test
+    public void painaToimii() {
+        Nappain q = new Nappain("q");
+        Nappain w = new Nappain("w");
+        Nappain e = new Nappain("e");
+        Nappain r = new Nappain("r");
+        Peli peli = new Peli(q,w,e,r);
+        peli.asetaPainettavaksi("w");
+        assertEquals(false, peli.paina("t"));
+    }
+    
+    @Test
     public void peliNostaaJaLaskeePisteitaOikein() {
         Nappain q = new Nappain("q");
         Nappain w = new Nappain("w");

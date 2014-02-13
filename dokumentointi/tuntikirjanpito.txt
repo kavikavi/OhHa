@@ -76,6 +76,18 @@ pohjassa, saattaa vaatia säätöä.
 pisteisiin, laskuriin ja peliin. Lisättävänä vielä siirtyminen pelimoodien välillä, jonkinlainen järkevä systeemi muiden
 pelimoodien tekoon ja käyttöliittymä valikolle & highscorelle.
 
+13.2.2014
+3h 30min - Javadocit tehty, pit-raportti saatu tehtyä, testejä päivitetty, uusi sekvenssikaavio tehty(samasta aiheesta
+kuin edellinen tosin), päivitetty luokkakaavio tehty.
+
+YHT. 7h
+
+---------------------------------------------------------
+
+
+VIIKKO 6
+
+
 
 
 

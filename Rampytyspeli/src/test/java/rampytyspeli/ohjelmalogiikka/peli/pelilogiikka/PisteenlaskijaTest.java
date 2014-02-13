@@ -64,4 +64,11 @@ public class PisteenlaskijaTest {
         assertEquals(52, pisteenlaskija.getPisteet());
     }
     
+    @Test
+    public void toStringToimii() {
+        Pisteenlaskija pisteenlaskija = new Pisteenlaskija();
+        pisteenlaskija.setPisteet(50);
+        assertEquals("50", pisteenlaskija.toString());
+    }
+    
 }

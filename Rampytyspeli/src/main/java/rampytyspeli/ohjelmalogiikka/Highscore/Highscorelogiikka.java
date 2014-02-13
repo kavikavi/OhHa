@@ -7,17 +7,32 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-
+/**
+ * Highscorelogiikka, eli pisteiden muovaaminen
+ * katseltavaan muotoon.
+ * Pisteiden hakeminen tiedostosta tapahtuu tiedostonkasittelijassa.
+ * 
+ */
 public class Highscorelogiikka {
     private Tiedostonkasittelija kasittelija;
     
+    /**
+     * Konstruktori
+     */
     public Highscorelogiikka() {
         this.kasittelija= new Tiedostonkasittelija();
     }
     
-    public HashMap<Integer, String> haeHighscore() throws FileNotFoundException {
+    /**
+     * * Hakee tiedostonkäsittelijällä pisteet 
+     * ja muuttaa ne liikuteltavaan muotoon. 
+     * @param polku tiedostopolku (piti laittaa tähänkin testausta varten)
+     * @return palauttaa pisteet ja nimet hashmapissa
+     * @throws FileNotFoundException 
+     */
+    public HashMap<Integer, String> haeHighscore(String polku) throws FileNotFoundException {
         HashMap<Integer, String> pisteet = new HashMap<Integer, String>();
-        for (String s : kasittelija.lueTiedosto("src/main/java/rampytyspeli/ohjelmalogiikka/Highscore/Highscore.txt")) {
+        for (String s : kasittelija.lueTiedosto(polku)) {
             String[] osat = s.split(":");
             int piste = Integer.parseInt(osat[0]);
             pisteet.put(piste, osat[1]);
@@ -26,6 +41,13 @@ public class Highscorelogiikka {
         return pisteet;
     }
     
+    /**
+     * Järjestysmetodi, asettaa pisteet suuruusjärjestykseen hashmapissa.
+     * Kutsutaan aina pisteitä haettaessa.
+     * 
+     * @param mappi Järjestettävä hashmap.
+     * @return 
+     */
     public HashMap<Integer, String> jarjesta(HashMap<Integer, String> mappi) {
         ArrayList<Integer> pistelista = new ArrayList<Integer>();
         for (Integer integer : mappi.keySet()) {
@@ -39,16 +61,24 @@ public class Highscorelogiikka {
         return jarjestetty;
     }
     
-    public void tallennaUusitulos(String nimi, Integer pisteet) throws FileNotFoundException, IOException {
-        HashMap<Integer, String> pistelista = haeHighscore();
+    
+    /**
+     * /**
+     * Tallentaa uuden pistetuloksen.
+     * 
+     * @param nimi pelaajan nimi
+     * @param pisteet pelaajan pisteet
+     * @param polku tiedostopolku
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
+    public void tallennaUusitulos(String nimi, Integer pisteet, String polku) throws FileNotFoundException, IOException {
+        HashMap<Integer, String> pistelista = haeHighscore(polku);
         pistelista.put(pisteet, nimi);
         ArrayList<String> tallennettava = new ArrayList<String>();
         for (Integer integer : pistelista.keySet()) {
             tallennettava.add(integer + ":" + pistelista.get(integer));
         }
-        kasittelija.tallennaTiedostoon("src/main/java/rampytyspeli/ohjelmalogiikka/Highscore/Highscore.txt", tallennettava);
+        kasittelija.tallennaTiedostoon(polku, tallennettava);
     }
-    
-    
-    
 }

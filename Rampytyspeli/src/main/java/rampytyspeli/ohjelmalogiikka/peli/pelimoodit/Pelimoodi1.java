@@ -14,6 +14,14 @@ import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Nappain;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Peli;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Pisteenlaskija;
 
+/**
+ * Ensimmäinen pelimoodi.
+ * 
+ * Luokka tullaan muuttamaan joko yläluokaksi tai rajapinnaksi,
+ * jotta muiden pelimoodien tekeminen olisi helpompaa, eikä tällaista
+ * rivihelvettiä tarvittaisi jokaiselle moodiluokalle.
+ * 
+ */
 public class Pelimoodi1 extends JPanel {
     
     private Nappain q;
@@ -34,7 +42,24 @@ public class Pelimoodi1 extends JPanel {
     private Font font;
     private JLabel moodi;
     
-    
+    /**
+     * Konstruktori.
+     * 
+     * Asettaa JLabeleille niiden alkusisällöt, luo randomit ja 
+     * fontit jne.
+     * 
+     * Luo komponentit.
+     * 
+     * Luo ja sisältää myös timertaskin: Joka sekunti
+     * kellon lukema nousee yhdellä ja aina viiden sekunnin välein
+     * asetetaan uudet painettavat näppäimet.
+     * 
+     * @param q Näppäin q
+     * @param w Näppäin w
+     * @param e Näppäin e
+     * @param r Näppäin r
+     * @param peli Peli, jolle moodi toimii.
+     */
     public Pelimoodi1(Nappain q, Nappain w, Nappain e, Nappain r, Peli peli) {
         super(new BorderLayout());
         this.q=q;
@@ -68,10 +93,14 @@ public class Pelimoodi1 extends JPanel {
         };
         kello.scheduleAtFixedRate(joku, 0, 1000);
         
-        
-        
     }
 
+    /**
+     * Luo komponentit JPanelille.
+     * Konstruktori käyttää metodia.
+     * JLabelit laitetaan paikoilleen ja 
+     * niille asetetaan fontti.
+     */
     private void luoKomponentit() {
         add(moodi, BorderLayout.CENTER);
         add(pisteet, BorderLayout.SOUTH);
@@ -83,14 +112,35 @@ public class Pelimoodi1 extends JPanel {
         moodi.setFont(font);
     }
     
+    /**
+     * Päivittää pistemäärän ruudulla.
+     */
     public void paivitaPisteet() {
         pisteet.setText("Pisteet: "+peli.pisteet());
     }
     
+    /**
+     * Nostaa kellon lukemaa yhdellä.
+     * 
+     * Kellona käytetään nerokkaasti pisteenlaskijaa.
+     */
     public void paivitaKello() {
         this.kellotaulu.korota(1);
     }
     
+    /**
+     * Arpoo uuden kahden napin sarjan.
+     * Käytännössä: moodilla on aina kaksi näppäintä, joita
+     * pelaajan tulee hakata vuorotellen. Esim: q -> e -> q -> e...
+     * Tämä metodi luo siis uuden tällaisen sarjan.
+     * Napit valitaan satunnaisesti neljän paikan listasta,
+     * johon napit on laitettu.
+     * Kaksi nappia eivät voi olla samat.
+     * 
+     * Tulevilla moodeilla vastaava metodi arpoo eri määrän nappeja
+     * tai tekee jotain muuta jännittävää.
+     * 
+     */
     public void uusiKahdenNapinSarja() {
         nappi1 = this.napit[random.nextInt(4)];
         while (true) {
@@ -101,6 +151,11 @@ public class Pelimoodi1 extends JPanel {
         }
     }
     
+    /**
+     * Tietty nappi asetetaan painettavaksi.
+     * 
+     * Tässä moodissa metodi asettaa kahta nappia vuorotellen.
+     */
     public void asetaNappi() {
         
         if (peli.getPainettava()==nappi1) {
@@ -108,9 +163,7 @@ public class Pelimoodi1 extends JPanel {
                 nappain.asetaPoisPainettavasta();
             }
             peli.asetaPainettavaksi(nappi2.getNimi());
-        }
-        
-        else {
+        } else {
             for (Nappain nappain : napit) {
                 nappain.asetaPoisPainettavasta();
             }
@@ -118,9 +171,13 @@ public class Pelimoodi1 extends JPanel {
         }
     }
     
+    /**
+     * Painettava nappi päivitetään ruudulle.
+     */
     public void paivitaPainettava() {
         this.painettava.setText("Paina: " + this.peli.getPainettava().getNimi());
     }
+    
     
     public int getKellonAika() {
         return this.kellotaulu.getPisteet();

@@ -39,4 +39,10 @@ public class NappainTest {
         assertEquals("nappi", nappi.getNimi());
     }
     
+    @Test
+    public void palauttaaNimen2() {
+        Nappain nappi = new Nappain(null);
+        assertEquals(null, nappi.getNimi());
+    }
+    
 }

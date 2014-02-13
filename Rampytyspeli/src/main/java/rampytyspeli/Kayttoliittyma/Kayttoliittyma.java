@@ -11,7 +11,11 @@ import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Nappain;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.NappaintenKuuntelija;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Peli;
 import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi1;
-
+/**
+ * Itse pelin käyttöliittymäluokka. 
+ * 
+ * Luo vain framen, ikkunan sisältö tulee pelimoodilta JPanelissa.
+ */
 public class Kayttoliittyma implements Runnable {
     private JFrame frame;
     private Nappain q;
@@ -22,7 +26,10 @@ public class Kayttoliittyma implements Runnable {
     private Pelimoodi1 moodi1;
     
     
-
+    /**
+     * Konstruktori.
+     * Luodaan ja asetetaan näppäimet, peli ja moodit.
+     */
     public Kayttoliittyma() {
         this.q = new Nappain("q");
         this.w = new Nappain("w");
@@ -48,6 +55,10 @@ public class Kayttoliittyma implements Runnable {
         
     }
     
+    /**
+     * Luo komponentit framelle, eli ts. lisää moodin.
+     * @param container 
+     */
     private void luoKomponentit(Container container) {
         container.setLayout(new BorderLayout());
         container.add(moodi1);
@@ -57,10 +68,17 @@ public class Kayttoliittyma implements Runnable {
         return frame;
     }
     
+    /**
+     * Luo ja lisää näppäintenkuuntelijan
+     */
     private void lisaaKuuntelijat() {
         frame.addKeyListener(new NappaintenKuuntelija(q, w, e, r, peli, this));
     }
     
+    /**
+     * Päivittää moodin JPanelin.
+     * Metodi kutsutaan aina nappia painettaessa NappaintenKuuntelijassa.
+     */
     public void paivitaMoodi() {
         moodi1.paivitaPisteet();
         moodi1.asetaNappi();

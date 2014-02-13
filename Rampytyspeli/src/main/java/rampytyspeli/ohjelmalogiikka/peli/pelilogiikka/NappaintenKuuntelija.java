@@ -6,7 +6,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import rampytyspeli.Kayttoliittyma.Kayttoliittyma;
 
-
+/**
+ * Näppäintenkuuntelijaluokka
+ * 
+ * Toimii yhteistyössä lähinnä pelin kanssa: kokeilee,
+ * onko painettu nappi painettavana ja muuttaa pistemäärää sen mukaan.
+ */
 public class NappaintenKuuntelija implements KeyListener {
     
     private Nappain q;
@@ -16,6 +21,18 @@ public class NappaintenKuuntelija implements KeyListener {
     private Peli peli;
     private Kayttoliittyma kayttis;
     
+    /**
+     * Konstruktori
+     * 
+     * @param q Näppäin q
+     * @param w Näppäin w
+     * @param e Näppäin e
+     * @param r Näppäin r
+     * @param peli Peli, jolle luokka kuuntelee ja joka asettaa
+     * painettavat näppäimet.
+     * @param kayttoliittyma Käyttöliittymä, jonka moodia näppäimen painallus
+     * päivittää.
+     */
     public NappaintenKuuntelija(Nappain q, Nappain w, Nappain e, Nappain r, Peli peli, Kayttoliittyma kayttoliittyma) {
         this.q=q;
         this.w=w;
@@ -35,6 +52,13 @@ public class NappaintenKuuntelija implements KeyListener {
         
     }
 
+    /**
+     * Jos painettu näppäin on pelissä asetettu painettavaksi, 
+     * pistemäärä nousee yhdellä.
+     * Jos taas ei ole, pistemäärä vähenee yhdellä.
+     * 
+     * @param e KeyEvent
+     */
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_Q) {
