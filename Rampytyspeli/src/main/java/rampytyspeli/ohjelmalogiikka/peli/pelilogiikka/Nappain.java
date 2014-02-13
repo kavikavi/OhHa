@@ -4,9 +4,11 @@ package rampytyspeli.ohjelmalogiikka.peli.pelilogiikka;
 
 public class Nappain {
     private boolean painettava;
+    private String nimi;
 
-    public Nappain() {
+    public Nappain(String nimi) {
         this.painettava=false;
+        this.nimi=nimi;
     }
     
     public boolean paina() {
@@ -19,6 +21,10 @@ public class Nappain {
     
     public void asetaPoisPainettavasta() {
         this.painettava=false;
+    }
+    
+    public String getNimi() {
+        return this.nimi;
     }
     
     

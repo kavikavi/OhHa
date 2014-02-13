@@ -56,4 +56,12 @@ public class PisteenlaskijaTest {
         assertEquals(0, pisteet);
     }
     
+    @Test
+    public void setPisteetToimii() {
+        Pisteenlaskija pisteenlaskija = new Pisteenlaskija();
+        pisteenlaskija.setPisteet(50);
+        pisteenlaskija.korota(2);
+        assertEquals(52, pisteenlaskija.getPisteet());
+    }
+    
 }

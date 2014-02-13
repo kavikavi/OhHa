@@ -22,6 +22,10 @@ public class Pisteenlaskija {
     public int getPisteet() {
         return pisteet;
     }
+    
+    public void setPisteet(int piste) {
+        this.pisteet=piste;
+    }
 
     @Override
     public String toString() {

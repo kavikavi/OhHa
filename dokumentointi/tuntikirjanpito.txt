@@ -71,7 +71,10 @@ VIIKKO 5
 esim. pelimoodirajapinta, ikkuna saatu päivittymään. Ilmentynyt ongelma: pisteet nousee taivaisiin jos pitää nappia 
 pohjassa, saattaa vaatia säätöä.
 
-
+13.2.2014
+1h 30min - Pajassa. Pelimoodi toimii ja muuttaa painettavaa yms. Fontti hankittu, muutamia uusia metodeja tehty ja testattu
+pisteisiin, laskuriin ja peliin. Lisättävänä vielä siirtyminen pelimoodien välillä, jonkinlainen järkevä systeemi muiden
+pelimoodien tekoon ja käyttöliittymä valikolle & highscorelle.
 
 
 

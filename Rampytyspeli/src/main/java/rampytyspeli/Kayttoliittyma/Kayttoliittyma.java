@@ -24,10 +24,10 @@ public class Kayttoliittyma implements Runnable {
     
 
     public Kayttoliittyma() {
-        this.q = new Nappain();
-        this.w = new Nappain();
-        this.e = new Nappain();
-        this.r = new Nappain();
+        this.q = new Nappain("q");
+        this.w = new Nappain("w");
+        this.e = new Nappain("e");
+        this.r = new Nappain("r");
         this.peli = new Peli(q,w,e,r);
         this.moodi1= new Pelimoodi1(q, w, e, r, peli);
         
@@ -63,5 +63,7 @@ public class Kayttoliittyma implements Runnable {
     
     public void paivitaMoodi() {
         moodi1.paivitaPisteet();
+        moodi1.asetaNappi();
+        moodi1.paivitaPainettava();
     }
 }

@@ -43,7 +43,7 @@ public class NappaintenKuuntelija implements KeyListener {
             } else {
                 peli.vahennaPisteita();
             }
-            peli.asetaPainettavaksi("q"); //<---- TESTAUSTA VARTEN
+//            peli.asetaPainettavaksi("q"); //<---- TESTAUSTA VARTEN
             System.out.println(peli.pisteet());
         } else if (e.getKeyCode() == KeyEvent.VK_W) {
             if (peli.paina("w")==true) {

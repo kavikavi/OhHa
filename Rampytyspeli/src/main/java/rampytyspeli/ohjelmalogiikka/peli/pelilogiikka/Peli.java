@@ -8,6 +8,7 @@ public class Peli {
     private Nappain w;
     private Nappain e;
     private Nappain r;
+    private Nappain[] nappaimet;
     
     /**
      * 
@@ -22,6 +23,7 @@ public class Peli {
         this.w = w;
         this.e = e;
         this.r = r;
+        this.nappaimet = new Nappain[]{q, w, e, r};
     }
     public boolean paina(String kirjain) {
         switch (kirjain) {
@@ -65,5 +67,18 @@ public class Peli {
                 break;
         }
     }
+    
+    public Nappain getPainettava() {
+        for (Nappain nappain : nappaimet) {
+            if (nappain.paina()==true) {
+                return nappain;
+            }
+        }
+        return q;
+            
+        
+    }
+    
+    
     
 }    
