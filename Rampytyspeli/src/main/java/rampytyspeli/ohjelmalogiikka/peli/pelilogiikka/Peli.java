@@ -123,6 +123,14 @@ public class Peli {
         
     }
     
+    /**
+     * Setteri pisteille.
+     * @param piste 
+     */
+    public void asetaPisteet(int piste) {
+        this.laskuri.setPisteet(piste);
+    }
+    
     
     
 }    

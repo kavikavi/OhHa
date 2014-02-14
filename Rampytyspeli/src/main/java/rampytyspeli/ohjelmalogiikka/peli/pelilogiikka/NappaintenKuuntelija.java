@@ -67,7 +67,7 @@ public class NappaintenKuuntelija implements KeyListener {
             } else {
                 peli.vahennaPisteita();
             }
-//            peli.asetaPainettavaksi("q"); //<---- TESTAUSTA VARTEN
+            kayttis.paivitaMoodi();
             System.out.println(peli.pisteet());
         } else if (e.getKeyCode() == KeyEvent.VK_W) {
             if (peli.paina("w")==true) {
@@ -75,6 +75,7 @@ public class NappaintenKuuntelija implements KeyListener {
             } else {
                 peli.vahennaPisteita();
             }
+            kayttis.paivitaMoodi();
             System.out.println(peli.pisteet());
         } else if (e.getKeyCode() == KeyEvent.VK_E) {
             if (peli.paina("e")==true) {
@@ -82,6 +83,7 @@ public class NappaintenKuuntelija implements KeyListener {
             } else {
                 peli.vahennaPisteita();
             }
+            kayttis.paivitaMoodi();
             System.out.println(peli.pisteet());
         } else if (e.getKeyCode() == KeyEvent.VK_R) {
             if (peli.paina("r")==true) {
@@ -89,8 +91,9 @@ public class NappaintenKuuntelija implements KeyListener {
             } else {
                 peli.vahennaPisteita();
             }
+            kayttis.paivitaMoodi();
             System.out.println(peli.pisteet());
         }
-        kayttis.paivitaMoodi();
+        
     }
 }

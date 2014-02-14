@@ -6,11 +6,13 @@ import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
-import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Peli;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Nappain;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.NappaintenKuuntelija;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Peli;
+import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi;
 import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi1;
+import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi2;
+import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi3;
 /**
  * Itse pelin käyttöliittymäluokka. 
  * 
@@ -24,6 +26,9 @@ public class Kayttoliittyma implements Runnable {
     private Nappain r;
     private Peli peli;
     private Pelimoodi1 moodi1;
+    private Pelimoodi2 moodi2;
+    private Pelimoodi3 moodi3;
+    private Pelimoodi moodi;
     
     
     /**
@@ -36,7 +41,8 @@ public class Kayttoliittyma implements Runnable {
         this.e = new Nappain("e");
         this.r = new Nappain("r");
         this.peli = new Peli(q,w,e,r);
-        this.moodi1= new Pelimoodi1(q, w, e, r, peli);
+        this.moodi1 = new Pelimoodi1(q, w, e, r, peli);
+        this.moodi= moodi1;
         
     }
     
@@ -47,7 +53,7 @@ public class Kayttoliittyma implements Runnable {
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        luoKomponentit(frame.getContentPane());
+        luoKomponentit1(frame.getContentPane());
         lisaaKuuntelijat();
 
         frame.pack();
@@ -59,10 +65,23 @@ public class Kayttoliittyma implements Runnable {
      * Luo komponentit framelle, eli ts. lisää moodin.
      * @param container 
      */
-    private void luoKomponentit(Container container) {
-        container.setLayout(new BorderLayout());
+    private void luoKomponentit1(Container container) {
+//        container.setLayout(new BorderLayout());
         container.add(moodi1);
     }
+    
+    private void luoKomponentit2(Container container) {
+//        container.setLayout(new BorderLayout());
+        container.add(moodi2);
+    } 
+    
+    private void luoKomponentit3(Container container) {
+//        container.setLayout(new BorderLayout());
+        container.add(moodi3);
+        
+        
+    } 
+    
     
     public JFrame getFrame() {
         return frame;
@@ -80,8 +99,18 @@ public class Kayttoliittyma implements Runnable {
      * Metodi kutsutaan aina nappia painettaessa NappaintenKuuntelijassa.
      */
     public void paivitaMoodi() {
-        moodi1.paivitaPisteet();
-        moodi1.asetaNappi();
-        moodi1.paivitaPainettava();
+        moodi.paivitaPisteet();
+        moodi.asetaNappi();
+        moodi.paivitaPainettava();
+        if (moodi.getKellonAika()==25) {
+            this.moodi2 = new Pelimoodi2(q, w, e, r, peli, moodi.getKellonAika(), moodi.getPisteet());
+            this.moodi=moodi2;
+            luoKomponentit2(frame.getContentPane());
+        }
+        if (moodi.getKellonAika()==50) {
+            this.moodi3 = new Pelimoodi3(q, w, e, r, peli, moodi.getKellonAika(), moodi.getPisteet());
+            this.moodi=moodi3;
+            luoKomponentit3(frame.getContentPane());
+        }
     }
 }

@@ -15,14 +15,14 @@ import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Peli;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Pisteenlaskija;
 
 /**
- * Ensimmäinen pelimoodi.
+ * Toinen pelimoodi.
  * 
  * Luokalle tullaan tekemään todennäköisesti yläluokka,
  * ettei jokaisen pelimoodin kohdalla tarvitsisi katsoa
  * tällaista rivihelvettiä.
  * 
  */
-public class Pelimoodi1 extends JPanel implements Pelimoodi {
+public class Pelimoodi3 extends JPanel implements Pelimoodi {
     
     private Nappain q;
     private Nappain w;
@@ -39,6 +39,7 @@ public class Pelimoodi1 extends JPanel implements Pelimoodi {
     private Pisteenlaskija kellotaulu;
     private Nappain nappi1;
     private Nappain nappi2;
+    private Nappain nappi3;
     private Font font;
     private JLabel moodi;
     private JLabel jarjestys;
@@ -61,7 +62,7 @@ public class Pelimoodi1 extends JPanel implements Pelimoodi {
      * @param r Näppäin r
      * @param peli Peli, jolle moodi toimii.
      */
-    public Pelimoodi1(Nappain q, Nappain w, Nappain e, Nappain r, Peli peli) {
+    public Pelimoodi3 (Nappain q, Nappain w, Nappain e, Nappain r, Peli peli, int kellonaika, int pisteet) {
         super(new BorderLayout());
         this.q=q;
         this.w=w;
@@ -73,12 +74,16 @@ public class Pelimoodi1 extends JPanel implements Pelimoodi {
         this.peli=peli;
         this.jarjestys = new JLabel();
         this.random = new Random();
-        this.aika = new JLabel("Aikaa mennyt: 0");
+        this.aika = new JLabel("Aikaa mennyt: "+ kellotaulu.getPisteet());
         this.pisteet = new JLabel("Pisteet: " + this.peli.pisteet());
         this.painettava = new JLabel("Paina: " + this.peli.getPainettava().getNimi());
-        this.moodi = new JLabel("Moodi: 1");
+        this.moodi = new JLabel("Moodi: 3");
         this.kello= new Timer();
+        this.kellotaulu.setPisteet(kellonaika);
+        this.peli.asetaPisteet(pisteet);
         luoKomponentit();
+        uusiSarja();
+        asetaNappi();
         
         
         this.joku = new TimerTask() {
@@ -87,11 +92,11 @@ public class Pelimoodi1 extends JPanel implements Pelimoodi {
             public void run() {
                 aika.setText("Aikaa mennyt: " + kellotaulu.getPisteet());
                 
-                if (kellotaulu.getPisteet()==25) {
+                if (kellotaulu.getPisteet()==72) {
                     return;
                 }
                 
-                if (kellotaulu.getPisteet()%5==0) {
+                if (kellotaulu.getPisteet()%8==0) {
                     uusiSarja();
                 }
                 paivitaKello();
@@ -112,9 +117,11 @@ public class Pelimoodi1 extends JPanel implements Pelimoodi {
         add(pisteet, BorderLayout.SOUTH);
         add(aika, BorderLayout.EAST);
         add(painettava, BorderLayout.NORTH);
+//        add(moodi);
         aika.setFont(font);
         pisteet.setFont(font);
         painettava.setFont(font);
+        moodi.setFont(font);
         jarjestys.setFont(font);
     }
     
@@ -135,16 +142,13 @@ public class Pelimoodi1 extends JPanel implements Pelimoodi {
     }
     
     /**
-     * Arpoo uuden kahden napin sarjan.
-     * Käytännössä: moodilla on aina kaksi näppäintä, joita
-     * pelaajan tulee hakata vuorotellen. Esim: q -> e -> q -> e...
+     * Arpoo uuden kolmen napin sarjan.
+     * Käytännössä: moodilla on aina kolme näppäintä, joista kaksi
+     * ovat samoja, joita
+     * pelaajan tulee hakata vuorotellen. Esim: q -> q ->w -> q -> q...
      * Tämä metodi luo siis uuden tällaisen sarjan.
      * Napit valitaan satunnaisesti neljän paikan listasta,
      * johon napit on laitettu.
-     * Kaksi nappia eivät voi olla samat.
-     * 
-     * Tulevilla moodeilla vastaava metodi arpoo eri määrän nappeja
-     * tai tekee jotain muuta jännittävää.
      * 
      */
     public void uusiSarja() {
@@ -152,9 +156,12 @@ public class Pelimoodi1 extends JPanel implements Pelimoodi {
         while (true) {
             nappi2 = this.napit[random.nextInt(4)];
             if (nappi1!=nappi2) {
-                this.jarjestys.setText("Järjestys: " + nappi1.getNimi()
-                            + ", " + nappi2.getNimi());
-                break;
+                nappi3 = this.napit[random.nextInt(4)];
+                if (nappi3==nappi2 && nappi3== nappi1) {
+                    this.jarjestys.setText("Järjestys: " + nappi1.getNimi()
+                            + ", " + nappi2.getNimi() + ", " + nappi3.getNimi());
+                    break;
+                }
             }
         }
     }
@@ -162,7 +169,7 @@ public class Pelimoodi1 extends JPanel implements Pelimoodi {
     /**
      * Tietty nappi asetetaan painettavaksi.
      * 
-     * Tässä moodissa metodi asettaa kahta nappia vuorotellen.
+     * Tässä moodissa metodi asettaa kolmea nappia vuorotellen.
      */
     public void asetaNappi() {
         
@@ -171,6 +178,11 @@ public class Pelimoodi1 extends JPanel implements Pelimoodi {
                 nappain.asetaPoisPainettavasta();
             }
             peli.asetaPainettavaksi(nappi2.getNimi());
+        } else if (peli.getPainettava()==nappi2) {
+            for (Nappain nappain : napit) {
+                nappain.asetaPoisPainettavasta();
+            }
+            peli.asetaPainettavaksi(nappi3.getNimi());
         } else {
             for (Nappain nappain : napit) {
                 nappain.asetaPoisPainettavasta();
