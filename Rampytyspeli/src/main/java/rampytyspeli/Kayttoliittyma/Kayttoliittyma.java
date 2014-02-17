@@ -5,6 +5,8 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Nappain;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.NappaintenKuuntelija;
@@ -13,6 +15,7 @@ import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi;
 import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi1;
 import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi2;
 import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi3;
+import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.LopetusMoodi;
 /**
  * Itse pelin käyttöliittymäluokka. 
  * 
@@ -28,6 +31,7 @@ public class Kayttoliittyma implements Runnable {
     private Pelimoodi1 moodi1;
     private Pelimoodi2 moodi2;
     private Pelimoodi3 moodi3;
+    private LopetusMoodi lopetus;
     private Pelimoodi moodi;
     
     
@@ -72,15 +76,28 @@ public class Kayttoliittyma implements Runnable {
     
     private void luoKomponentit2(Container container) {
 //        container.setLayout(new BorderLayout());
+        container.remove(moodi1);
         container.add(moodi2);
     } 
     
     private void luoKomponentit3(Container container) {
 //        container.setLayout(new BorderLayout());
+        container.remove(moodi2);
         container.add(moodi3);
-        
-        
-    } 
+    }
+    
+    private void luoKomponentit4(Container container) {
+//        container.setLayout(new BorderLayout());
+        container.remove(moodi2);
+        container.add(lopetus);
+    }
+    
+    /**
+     * sulkee ikkunan.
+     */
+    public void sulje() {
+        this.frame.dispose();
+    }
     
     
     public JFrame getFrame() {
@@ -108,9 +125,12 @@ public class Kayttoliittyma implements Runnable {
             luoKomponentit2(frame.getContentPane());
         }
         if (moodi.getKellonAika()==50) {
-            this.moodi3 = new Pelimoodi3(q, w, e, r, peli, moodi.getKellonAika(), moodi.getPisteet());
-            this.moodi=moodi3;
-            luoKomponentit3(frame.getContentPane());
+           this.lopetus= new LopetusMoodi(moodi.getPisteet(), this);
+           this.moodi = lopetus;
+           luoKomponentit4(frame.getContentPane());
+//            this.moodi3 = new Pelimoodi3(q, w, e, r, peli, moodi.getKellonAika(), moodi.getPisteet());
+//            this.moodi=moodi3;
+//            luoKomponentit3(frame.getContentPane());
         }
     }
 }

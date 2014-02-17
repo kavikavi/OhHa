@@ -189,6 +189,7 @@ public class Pelimoodi2 extends JPanel implements Pelimoodi {
             }
             peli.asetaPainettavaksi(nappi1.getNimi());
         }
+        paivitaPainettava();
     }
     
     /**

@@ -93,6 +93,11 @@ VIIKKO 6
 siirryttäessä kolmanteen peli jäätyy. Liittyy jotenkin toisen moodin loppumiseen, sillä asettelu ei toiminut
 vaikka laitettiin siirtymään takaisin ensimmäiseen. Ei oikein käsitystä mistä voisi johtua.
 
+17.2.2014
+4h - "Lopetusmoodi" tehty, lopetusmoodille pisteidenLisäysListener tehty(Ei tosin toimi jostain syystä, ongelma tod näk. 
+tiedostonkäsittelijässä), Päävalikkoa listenereitä vaille tehty. Aihemäärittely siivottu ja jotain pientä rukkausta tehty 
+käyttöliittymään ja moodeihin.
+
 
 
 
