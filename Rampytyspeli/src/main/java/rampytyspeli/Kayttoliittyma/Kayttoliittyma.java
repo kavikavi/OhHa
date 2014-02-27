@@ -1,20 +1,19 @@
 
 package rampytyspeli.Kayttoliittyma;
 
-import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.WindowConstants;
+import rampytyspeli.ohjelmalogiikka.Highscore.Highscorelogiikka;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Nappain;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.NappaintenKuuntelija;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Peli;
 import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi;
 import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi1;
 import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi2;
-import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.Pelimoodi3;
 import rampytyspeli.ohjelmalogiikka.peli.pelimoodit.LopetusMoodi;
 /**
  * Itse pelin käyttöliittymäluokka. 
@@ -30,7 +29,6 @@ public class Kayttoliittyma implements Runnable {
     private Peli peli;
     private Pelimoodi1 moodi1;
     private Pelimoodi2 moodi2;
-    private Pelimoodi3 moodi3;
     private LopetusMoodi lopetus;
     private Pelimoodi moodi;
     
@@ -83,12 +81,6 @@ public class Kayttoliittyma implements Runnable {
     private void luoKomponentit3(Container container) {
 //        container.setLayout(new BorderLayout());
         container.remove(moodi2);
-        container.add(moodi3);
-    }
-    
-    private void luoKomponentit4(Container container) {
-//        container.setLayout(new BorderLayout());
-        container.remove(moodi2);
         container.add(lopetus);
     }
     
@@ -111,6 +103,7 @@ public class Kayttoliittyma implements Runnable {
         frame.addKeyListener(new NappaintenKuuntelija(q, w, e, r, peli, this));
     }
     
+    
     /**
      * Päivittää moodin JPanelin.
      * Metodi kutsutaan aina nappia painettaessa NappaintenKuuntelijassa.
@@ -124,13 +117,11 @@ public class Kayttoliittyma implements Runnable {
             this.moodi=moodi2;
             luoKomponentit2(frame.getContentPane());
         }
-        if (moodi.getKellonAika()==50) {
+        if (moodi.getKellonAika()==80) {
            this.lopetus= new LopetusMoodi(moodi.getPisteet(), this);
            this.moodi = lopetus;
-           luoKomponentit4(frame.getContentPane());
-//            this.moodi3 = new Pelimoodi3(q, w, e, r, peli, moodi.getKellonAika(), moodi.getPisteet());
-//            this.moodi=moodi3;
-//            luoKomponentit3(frame.getContentPane());
+           luoKomponentit3(frame.getContentPane());
+
         }
     }
 }

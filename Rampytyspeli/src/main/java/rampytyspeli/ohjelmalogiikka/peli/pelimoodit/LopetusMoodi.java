@@ -9,11 +9,14 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import static java.awt.Font.PLAIN;
 import static java.awt.Font.SANS_SERIF;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import javax.swing.JTextField;
 import rampytyspeli.Kayttoliittyma.Kayttoliittyma;
-import rampytyspeli.ohjelmalogiikka.Highscore.PisteidenLisaysListener;
+import rampytyspeli.ohjelmalogiikka.Highscore.Highscorelogiikka;
+import rampytyspeli.ohjelmalogiikka.PisteidenLisaysListener;
 
 /**
  *Viimeinen "moodi", joka oikeastaan on vain lopetusikkuna.
@@ -27,7 +30,7 @@ public class LopetusMoodi extends JPanel implements Pelimoodi {
     private JLabel viesti1;
     private JLabel viesti2;
     private JLabel viesti3;
-    private JTextArea kirjoitus;
+    private JTextField kirjoitus;
     private JButton ok;
     private Font font1;
     private Font font2;
@@ -60,7 +63,7 @@ public class LopetusMoodi extends JPanel implements Pelimoodi {
         this.viesti1=new JLabel("Tuloksesi on " + pisteet + " pistettä.");
         this.viesti2=new JLabel("Aseta nimesi ja paina Jatka tallentaaksesi tuloksesi.");
         this.viesti3=new JLabel("Jos jätät nimikentän tyhjäksi, tulostasi ei tallenneta.");
-        this.kirjoitus = new JTextArea("Nimi tähän");
+        this.kirjoitus = new JTextField("Nimi tähän");
         this.ok = new JButton("Jatka");
         this.viesti.setFont(font2);
         this.viesti1.setFont(font2);
@@ -83,6 +86,8 @@ public class LopetusMoodi extends JPanel implements Pelimoodi {
         PisteidenLisaysListener k = new PisteidenLisaysListener(kirjoitus, pisteet, kayttis);
         this.ok.addActionListener(k);
     }
+    
+    
     
     
 

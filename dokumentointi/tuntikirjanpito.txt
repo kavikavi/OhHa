@@ -85,7 +85,7 @@ YHT. 7h
 ---------------------------------------------------------
 
 
-VIIKKO 6
+VIIKKO 6 
 
 
 14.2.2014
@@ -97,6 +97,66 @@ vaikka laitettiin siirtymään takaisin ensimmäiseen. Ei oikein käsitystä mis
 4h - "Lopetusmoodi" tehty, lopetusmoodille pisteidenLisäysListener tehty(Ei tosin toimi jostain syystä, ongelma tod näk. 
 tiedostonkäsittelijässä), Päävalikkoa listenereitä vaille tehty. Aihemäärittely siivottu ja jotain pientä rukkausta tehty 
 käyttöliittymään ja moodeihin.
+
+27.2.2014
+8h - Paljon asioita:
++ Tehty uusia:
+	* Pistetulosluokka
+	* Highscoreikkunaluokka
+	* Highscoreikkunan avaajalistenerluokka
+	* Highscoreikkunan "poistu" napin kuuntelijaluokka
+	* Pelin aloittajanapin listener
+	* Pisteidenlisäysnapin Listener
++ Kaikki highscoreihin liittyvä uudistettu: Ei enää hashmappeja joissa nimi ja pisteet, vaan luotu erillinen
+pistetulosluokka, joka sisältää tiedot.
++ Päävalikko tehty loppuun ja toimivaksi
++ Lopetusmoodi tehty loppuun ja toimivaksi, pisteidenLisäysListener saatu toimimaan
++ Testit päivitetty
+- Pelimoodien siirtymään liityvää ongelmaa ei löydetty. Peli jäätyi siirryttäessä moodista 2 moodiin 3. Korjattu
+yksinkertaistamalla lopullista tuotosta ja sisäistämällä loput moodit moodiin 2. Lopullisessa pelissä "3 eri moodia" 
+poislukien lopetusikkuna.
+- Huomenna ennen palautusta: 
+	- Uusi sekvenssikaavio
+	- Pit-raportin uusiminen
+	- Aihemäärittelyn päivitys ja tarkistus
+	- Tarkista javadocit
+	- Rakennekuvauksen kirjoitus
+	- Jarin luonti
+	- Luokkakaavion päivitys
+	- Käyttöohjeiden kirjoitus
+	- Tiedostomuotojen yms tarkistus ja muu pikkuvarmistelu
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

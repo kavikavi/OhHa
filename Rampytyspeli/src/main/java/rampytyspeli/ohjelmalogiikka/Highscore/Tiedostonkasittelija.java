@@ -52,9 +52,4 @@ public class Tiedostonkasittelija {
         }
         kirjoittaja.close();
     }
-    
-    
-    
-    
-    
 }

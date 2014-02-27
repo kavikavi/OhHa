@@ -11,6 +11,8 @@ import javax.swing.WindowConstants;
 import static java.awt.Font.PLAIN;
 import static java.awt.Font.SANS_SERIF;
 import javax.swing.JButton;
+import rampytyspeli.ohjelmalogiikka.HighscoreIkkunanAvaajaListener;
+import rampytyspeli.ohjelmalogiikka.PelinAloittajaListener;
 
 /**
  * Päävalikko.
@@ -20,6 +22,9 @@ import javax.swing.JButton;
 public class Paavalikko implements Runnable {
     private JFrame frame;
     private Kayttoliittyma kayttis;
+    private JButton kaynnistysnappi;
+    private JButton highscore;
+    private JLabel otsikko;
     
     /**
      * Konstruktori.
@@ -49,16 +54,29 @@ public class Paavalikko implements Runnable {
      */
     private void luoKomponentit(Container container) {
         container.setLayout(new GridLayout(3,1));
+        this.otsikko = new JLabel("Tervetuloa Rämpytyspeliin!");
+        this.kaynnistysnappi = new JButton("Aloita peli");
+        this.highscore = new JButton("Ennätyspisteet");
+        asetaFontit();
+        container.add(otsikko);
+        container.add(kaynnistysnappi);
+        container.add(highscore);
+    }
+    
+    private void asetaFontit() {
         Font font = new Font(SANS_SERIF, PLAIN, 20);
-        JLabel otsikko = new JLabel("Rämpytyspeli");
-        JButton kaynnistysnappi = new JButton("Aloita peli");
-        JButton highscore = new JButton("Ennätyspisteet");
+        this.otsikko.setFont(font);
+        this.kaynnistysnappi.setFont(font);
+        this.highscore.setFont(font);
     }
     
     /**
      * Lisää nappien kuuntelijat.
      */
     private void lisaaKuuntelijat() {
-        //TEE TÄÄ LOPPUUN
+        PelinAloittajaListener aloittaja = new PelinAloittajaListener();
+        HighscoreIkkunanAvaajaListener avaaja = new HighscoreIkkunanAvaajaListener();
+        this.kaynnistysnappi.addActionListener(aloittaja);
+        this.highscore.addActionListener(avaaja);
     }
 }
