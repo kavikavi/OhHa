@@ -1,10 +1,12 @@
 Aihe: Rämpytyspeli
 
 Tehdään peli, jossa pelaajan tulee rämpyttää tiettyjä näppäimiä ennalta määritellystä kokonaisuudesta (q, w, e, r,) aikarajan sisällä niin nopeasti kuin pystyy. 
-Jokaista painallusta kohden pelaaja saa pisteen.
-Pelin edetessä painettava napit vaihtuu lyhyin väliajoin ja mitä pidemmälle peli etenee, sitä monimutkaisempia näppäinkuvioita peli pelaajaltaan vaatii (esim. järjestyksessä q, r, w)(="pelimoodit").
-Peli loppuu ajan mennessä umpeen.
+Jokaista painallusta kohden pelaaja saa pisteen, väärästä painalluksesta menetetään piste
+Pelin edetessä painettavat napit vaihtuvat lyhyin väliajoin ja mitä pidemmälle peli etenee, sitä monimutkaisempia näppäinkuvioita peli pelaajaltaan vaatii: ensin kahden napin sarjoja, sitten kolmen ja lopuksi neljän.
+Näppäinsarjat ovat satunnaisia, vain näppäinten määrä on vakio.
+Peli kestää 80 sekuntia.
 Pelin jälkeen pelaaja voi tallettaa pistemääränsä nimen kera highscore-listalle, joka tallennetaan erilliseen tekstitiedostoon.
+Ennätyspisteitä (highscore) voi tarkastella erikseen päävalikon kautta.
 
 
 Käyttäjä: pelaaja
@@ -13,3 +15,4 @@ Pelaajan toiminnot:
 - Pelin aloittaminen
 - Highscore-listan tarkastelu
 - Pelin pelaaminen
+- Pistetuloksen tallentaminen highscoreen

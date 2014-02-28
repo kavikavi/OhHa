@@ -1,0 +1,15 @@
+Aloitetaan rakenteen purkaminen päävalikosta. Päävalikon ennätyspisteet avaava nappi käynnistää uuden ikkunan HighscoreIkkunanAvaajaListenerin kautta.
+HighscoreIkkuna itsessään on oma JFramensa, joka on jaettu ylhäältä alas 12 osaan gridlayoutilla. Ikkunassa on ylimmäisenä otsikkoteksti, sen jälkeen
+kymmenen riviä pistetuloksia ja viimeisenä alhaalla poistumisnappi. Highscoreikkuna käyttää pisteiden hakemiseen Highscorelogiikkaa, joka taas käyttää
+Tiedostonkasittelijaa pistetiedoston lukemiseen. Molemmat, Ikkuna ja logiikka käyttävät pistetulos-oliota, jotta pisteiden pyörittely olisi helpompaa.
+Highscoreikkunan poistumisnappi käyttää HighscoreIkkunanPoistumisNapinKuuntelijaa ikkunan sulkemiseen.
+
+Päävalikon toinen nappi käyttää PelinAloittajaListeneriä Kayttoliittyman, joka luo itse pelin JFramen, avaamiseen. Kayttoliittyma jaksottaa moodien 
+käyttöä ja toimii niiden välikappaleena nappaintenKuuntelijan kanssa. Kayttoliittyma myös luo näppäimet, pelin, pelimoodit ja näppäintenkuuntelijan.
+Peli-luokka on yhteydessä näppäintenkuuntelijan, näppäinten ja Pisteenlaskijan kanssa. Se toimii näiden ohjailuluokkana. Pelimoodit (Pelimoodi1, 
+Pelimoodi2 ja Lopetusmoodi) toteuttavat Pelimoodi-rajapinnan. Tämä siksi, että moodien pyörittely Kayttoliittymassa helpottuisi. Pelimoodeille piti
+alunperin tehdä yläluokka, mutta ajan ja osaamisen puute johtivat nykyiseen ratkaisuun. Pelimoodien kanssa ilmeni myös muita ongelmia: 
+Peli jäätyi tuntemattomasta syystä poistuttaessa toisesta pelimoodista, ja koska ratkaisua ongelmaan ei millään löytynyt, päädyttiin lopulta 
+yksinkertaistamaan peliä ja sisäistämään kolmas moodi luokkaan Pelimoodi2. Pelimoodit luovat sisällön Kayttoliittyman JFramelle, sekä ohjailevat
+painettavien nappien kokonaisuuksia ja toimintaa. Lopetusmoodi luo JFramelle sen lopetuskuvan, jossa pelaaja voi tallentaa pisteensä. Lopetusmoodin 
+jatka-nappi toimii PisteidenLisaysListenerin kautta.

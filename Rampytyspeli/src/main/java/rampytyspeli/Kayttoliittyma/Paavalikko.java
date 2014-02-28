@@ -16,7 +16,7 @@ import rampytyspeli.ohjelmalogiikka.PelinAloittajaListener;
 
 /**
  * Päävalikko.
- * 
+ * Sisältää napit aloitukselle ja pisteiden tarkastelulle.
  *
  */
 public class Paavalikko implements Runnable {
@@ -63,6 +63,9 @@ public class Paavalikko implements Runnable {
         container.add(highscore);
     }
     
+    /**
+     * Asettaa fontin.
+     */
     private void asetaFontit() {
         Font font = new Font(SANS_SERIF, PLAIN, 20);
         this.otsikko.setFont(font);

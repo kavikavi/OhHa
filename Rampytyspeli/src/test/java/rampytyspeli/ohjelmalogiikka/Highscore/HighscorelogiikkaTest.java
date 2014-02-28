@@ -4,9 +4,6 @@ package rampytyspeli.ohjelmalogiikka.Highscore;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collections;
-import rampytyspeli.ohjelmalogiikka.Highscore.Highscorelogiikka;
-import java.util.HashMap;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

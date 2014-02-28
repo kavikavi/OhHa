@@ -1,0 +1,10 @@
+250:Paula Pro
+300:Korealainen
+200:Heimo Hakkaaja
+150:Kiira keskiverto
+100:Enni Etusormi
+75:Heikki Hidastelija
+35:Niilo Nyrkkeilijä
+15:Aimo Avokämmen
+0:Ray Charles
+394:Tekijän ennätys

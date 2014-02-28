@@ -3,11 +3,8 @@ package rampytyspeli.Kayttoliittyma;
 
 import java.awt.Container;
 import java.awt.Dimension;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
-import rampytyspeli.ohjelmalogiikka.Highscore.Highscorelogiikka;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Nappain;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.NappaintenKuuntelija;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Peli;
@@ -68,18 +65,15 @@ public class Kayttoliittyma implements Runnable {
      * @param container 
      */
     private void luoKomponentit1(Container container) {
-//        container.setLayout(new BorderLayout());
         container.add(moodi1);
     }
     
     private void luoKomponentit2(Container container) {
-//        container.setLayout(new BorderLayout());
         container.remove(moodi1);
         container.add(moodi2);
     } 
     
     private void luoKomponentit3(Container container) {
-//        container.setLayout(new BorderLayout());
         container.remove(moodi2);
         container.add(lopetus);
     }
@@ -97,7 +91,7 @@ public class Kayttoliittyma implements Runnable {
     }
     
     /**
-     * Luo ja lisää näppäintenkuuntelijan
+     * Luo ja lisää näppäintenkuuntelijan.
      */
     private void lisaaKuuntelijat() {
         frame.addKeyListener(new NappaintenKuuntelija(q, w, e, r, peli, this));

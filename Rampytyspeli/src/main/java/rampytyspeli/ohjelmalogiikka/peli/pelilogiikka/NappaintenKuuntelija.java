@@ -68,7 +68,6 @@ public class NappaintenKuuntelija implements KeyListener {
                 peli.vahennaPisteita();
             }
             kayttis.paivitaMoodi();
-            System.out.println(peli.pisteet());
         } else if (e.getKeyCode() == KeyEvent.VK_W) {
             if (peli.paina("w")==true) {
                 peli.nostaPisteita(1);
@@ -76,7 +75,6 @@ public class NappaintenKuuntelija implements KeyListener {
                 peli.vahennaPisteita();
             }
             kayttis.paivitaMoodi();
-            System.out.println(peli.pisteet());
         } else if (e.getKeyCode() == KeyEvent.VK_E) {
             if (peli.paina("e")==true) {
                 peli.nostaPisteita(1);
@@ -84,7 +82,6 @@ public class NappaintenKuuntelija implements KeyListener {
                 peli.vahennaPisteita();
             }
             kayttis.paivitaMoodi();
-            System.out.println(peli.pisteet());
         } else if (e.getKeyCode() == KeyEvent.VK_R) {
             if (peli.paina("r")==true) {
                 peli.nostaPisteita(1);
@@ -92,7 +89,6 @@ public class NappaintenKuuntelija implements KeyListener {
                 peli.vahennaPisteita();
             }
             kayttis.paivitaMoodi();
-            System.out.println(peli.pisteet());
         }
         
     }

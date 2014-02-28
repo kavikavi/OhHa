@@ -17,9 +17,9 @@ import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Pisteenlaskija;
 /**
  * Ensimmäinen pelimoodi.
  * 
- * Luokalle tullaan tekemään todennäköisesti yläluokka,
- * ettei jokaisen pelimoodin kohdalla tarvitsisi katsoa
- * tällaista rivihelvettiä.
+ * Koska pelimoodirakennetta ei saatu toimimaan suunnitellusti, 
+ * on tässä luokassa ensimmäinen kahden napin moodi, ja loput sijaitsevat
+ * Pelimoodi2:ssa.
  * 
  */
 public class Pelimoodi1 extends JPanel implements Pelimoodi {
@@ -142,8 +142,7 @@ public class Pelimoodi1 extends JPanel implements Pelimoodi {
      * Napit valitaan satunnaisesti neljän paikan listasta,
      * johon napit on laitettu.
      * Kaksi nappia eivät voi olla samat.
-     * 
-     * Tulevilla moodeilla vastaava metodi arpoo eri määrän nappeja
+     * rpoo eri määrän nappeja
      * tai tekee jotain muuta jännittävää.
      * 
      */
@@ -196,13 +195,4 @@ public class Pelimoodi1 extends JPanel implements Pelimoodi {
         return this.peli.pisteet();
     }
 
-    
-    
-    
-    
-    
-    
-    
-
-    
 }

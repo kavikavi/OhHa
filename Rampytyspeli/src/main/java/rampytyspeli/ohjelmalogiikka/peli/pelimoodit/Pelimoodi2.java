@@ -15,11 +15,10 @@ import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Peli;
 import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Pisteenlaskija;
 
 /**
- * Toinen pelimoodi.
+ * "Toinen" pelimoodi.
  * 
- * Luokalle tullaan tekemään todennäköisesti yläluokka,
- * ettei jokaisen pelimoodin kohdalla tarvitsisi katsoa
- * tällaista rivihelvettiä.
+ * Koska pelimoodirakennetta ei saatu toimimaan suunnitellusti, 
+ * on tähän luokkaan rakennettu 2. ja 3. moodi.
  * 
  */
 public class Pelimoodi2 extends JPanel implements Pelimoodi {
@@ -54,7 +53,7 @@ public class Pelimoodi2 extends JPanel implements Pelimoodi {
      * Luo komponentit.
      * 
      * Luo ja sisältää myös timertaskin: Joka sekunti
-     * kellon lukema nousee yhdellä ja aina viiden sekunnin välein
+     * kellon lukema nousee yhdellä ja aina kahdeksan sekunnin välein
      * asetetaan uudet painettavat näppäimet.
      * 
      * @param q Näppäin q
@@ -139,6 +138,10 @@ public class Pelimoodi2 extends JPanel implements Pelimoodi {
         this.kellotaulu.korota(1);
     }
     
+    /**
+     * Määrittää eron 2. ja 3. moodin välillä: ennen 56. sekuntia
+     * on moodi 2 ja sen jälkeen moodi 3.
+     */
     public void uusiSarja() {
         if (this.kellotaulu.getPisteet()<56) {
             uusiSarja1();
@@ -172,6 +175,15 @@ public class Pelimoodi2 extends JPanel implements Pelimoodi {
         }
     }
     
+    /**
+     * Arpoo uuden neljän napin sarjan.
+     * Käytännössä: moodilla on aina neljä näppäintä, joita
+     * pelaajan tulee hakata vuorotellen. Esim: q -> e ->w -> r -> q...
+     * Tämä metodi luo siis uuden tällaisen sarjan.
+     * Napit valitaan satunnaisesti neljän paikan listasta,
+     * johon napit on laitettu.
+     * Neljä nappia eivät voi olla samat.
+     */
     public void uusiSarja2() {
         nappi1 = this.napit[random.nextInt(4)];
         while (true) {
@@ -190,6 +202,10 @@ public class Pelimoodi2 extends JPanel implements Pelimoodi {
         }
     }
     
+    /**
+     * Määrittää eron 2. ja 3. moodin välillä
+     * napin asetuksessa, kuten uusiSarja()
+     */
     public void asetaNappi() {
         if (this.kellotaulu.getPisteet()<57) {
             asetaNappi1();
@@ -224,6 +240,11 @@ public class Pelimoodi2 extends JPanel implements Pelimoodi {
         paivitaPainettava();
     }
     
+     /**
+     * Tietty nappi asetetaan painettavaksi.
+     * 
+     * Tässä moodissa metodi asettaa neljä nappia vuorotellen.
+     */
     public void asetaNappi2() {
         if (peli.getPainettava()==nappi1) {
             for (Nappain nappain : napit) {

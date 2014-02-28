@@ -40,9 +40,6 @@ public class Peli {
      * Hakee napilta totuusarvon, onko se painettavana ja palauttaa sen
      * eteenpäin
      * 
-     * !Huom! ei käytä näppäimen nimeä hakemiseen koska tehty
-     * aiemmassa vaiheessa. Muutetaan sellaiseksi jos muutetaan.
-     * 
      * @param kirjain painettava nappi
      * @return palauttaa totuusarvon
      */
@@ -86,9 +83,6 @@ public class Peli {
     /**
      * Asettaa näppäimen painettavaksi.
      * 
-     * !Huom! ei käytä näppäimen nimeä hakemiseen koska tehty
-     * aiemmassa vaiheessa. Muutetaan sellaiseksi jos muutetaan.
-     * 
      * @param kirjain asetettava näppäin
      */
     public void asetaPainettavaksi(String kirjain) {
@@ -130,7 +124,5 @@ public class Peli {
     public void asetaPisteet(int piste) {
         this.laskuri.setPisteet(piste);
     }
-    
-    
     
 }    

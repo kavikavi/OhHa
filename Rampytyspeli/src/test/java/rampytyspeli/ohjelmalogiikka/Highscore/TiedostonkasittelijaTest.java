@@ -1,8 +1,6 @@
 
 package rampytyspeli.ohjelmalogiikka.Highscore;
 
-import rampytyspeli.ohjelmalogiikka.Highscore.Tiedostonkasittelija;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;

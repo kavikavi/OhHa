@@ -5,9 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import rampytyspeli.Kayttoliittyma.Kayttoliittyma;
 import rampytyspeli.ohjelmalogiikka.Highscore.Highscorelogiikka;
@@ -34,6 +31,10 @@ public class PisteidenLisaysListener implements ActionListener {
         this.kayttis=kayttis;
     }
     
+    /**
+     * Jos nimi ei ole tyhjä tai "Nimi tähän", tulos tallennetaan.
+     * @param e 
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         

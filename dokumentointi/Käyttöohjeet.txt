@@ -1,0 +1,23 @@
+Käyttöohjeet Rämpytyspelille
+
+-Valikko-
+Kun ohjelma aukaistaan, tulee esiin yksinkertainen päävalikko. Valikon nappeja painamalla voi valita pelaatko peliä
+vai tarkasteletko ennätyspisteitä. Ohjelma suljetaan rastista yläkulmassa.
+
+-Ennätyspisteet-
+Jos siirryt katselemaan ennätyspisteitä, aukeaa uusi ikkuna, jossa näkyy 10 parasta pistetulosta nimineen.
+Pistetuloslistan voit sulkea alareunan "poistu" näppäimellä.
+
+-Pelaaminen-
+Jos valitset päävalikosta pelaamisvaihtoehdon, aukeaa itse peli uutena ikkunana. Ole nopea, sillä peli käynnistyy heti
+painettuasi nappia. Pelin tarkoituksena on painaa oikeita nappeja järjestyksessä, jonka peli antaa ruudulle. Kaiken
+kaikkiaan peli ilmoittaa pisteesi, kuluneen ajan, seuraavaksi painettavan napin ja senhetkisen näppäinyhdisteen.
+Näppäimet ovat q, w, e ja r. Painaessasi oikeaa näppäintä saat pisteen ja painaessasi väärää näppäintä menetät pisteen. Huomio:
+Vaikka painaisit väärää näppäintä, vaihtuu silti seuraavaksi painettava nappi. Näppäinjärjestys muuttuu tietyin väliajoin
+ja pidemmälle peliin mentäessä näppäinten määrä kasvaa. Peli kestää 80 sekuntia.
+
+-Pelin jälkeen-
+Pelin päätyttyä siirryt lopetusikkunaan. Lopetusikkunassa sinulle kerrotaan lopullinen pistetuloksesi, ja voit tallentaa
+tuloksesi ennätyspisteisiin. Tämä onnistuu kirjoittamalla nimesi tekstikenttään ja painamalla jatka-nappia. Jos et 
+halua tallettaa pisteitäsi, voit jättää kentän sellaisekseen ("Nimi tähän") tai tyhjäksi, ja painaa jatka-nappia.
+Jatka-nappi sulkee peli-ikkunan ja palaat päävalikkoon.

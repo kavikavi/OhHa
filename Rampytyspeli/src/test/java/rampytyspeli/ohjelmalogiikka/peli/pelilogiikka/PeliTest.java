@@ -1,12 +1,6 @@
 
 package rampytyspeli.ohjelmalogiikka.peli.pelilogiikka;
 
-import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Peli;
-import rampytyspeli.ohjelmalogiikka.peli.pelilogiikka.Nappain;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import rampytyspeli.Kayttoliittyma.HighscoreIkkuna;
 
 /**
- *
+ *Päävalikon highscoren avaajan kuuntelija.
  * 
  */
 public class HighscoreIkkunanAvaajaListener implements ActionListener {

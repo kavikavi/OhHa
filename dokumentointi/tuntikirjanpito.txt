@@ -116,15 +116,25 @@ pistetulosluokka, joka sisältää tiedot.
 yksinkertaistamalla lopullista tuotosta ja sisäistämällä loput moodit moodiin 2. Lopullisessa pelissä "3 eri moodia" 
 poislukien lopetusikkuna.
 - Huomenna ennen palautusta: 
-	- Uusi sekvenssikaavio
-	- Pit-raportin uusiminen
-	- Aihemäärittelyn päivitys ja tarkistus
-	- Tarkista javadocit
-	- Rakennekuvauksen kirjoitus
-	- Jarin luonti
-	- Luokkakaavion päivitys
-	- Käyttöohjeiden kirjoitus
-	- Tiedostomuotojen yms tarkistus ja muu pikkuvarmistelu
+	- Uusi sekvenssikaavio										ok
+	- Pit-raportin uusiminen									ok
+	- Aihemäärittelyn päivitys ja tarkistus						ok
+	- Tarkista javadocit										ok
+	- Rakennekuvauksen kirjoitus								ok
+	- Jarin luonti												ok
+	- Luokkakaavion päivitys									ok
+	- Käyttöohjeiden kirjoitus									ok
+	- Poista turhat importit									ok
+	- Tiedostomuotojen yms tarkistus ja muu pikkuvarmistelu		ok
+	
+28.2.2014
+4h - tehty listan asiat ^
+Jostain syystä Jarin teko rikkoi ääkköset highscorelistalta, kaikenlaisia kikkoja kokeiltu korjaamiseksi, mutta 
+mikään ei toiminut.
+"Kaikki mikä voi mennä pieleen menee pieleen"
+
+
+YHT. 18h	
 	
 
 

@@ -1,7 +1,6 @@
 
 package rampytyspeli.Kayttoliittyma;
 
-import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -9,8 +8,6 @@ import java.io.FileNotFoundException;
 import static java.awt.Font.PLAIN;
 import static java.awt.Font.SANS_SERIF;
 import java.awt.GridLayout;
-import java.util.ArrayList;
-import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,6 +15,7 @@ import javax.swing.WindowConstants;
 import rampytyspeli.ohjelmalogiikka.Highscore.Highscorelogiikka;
 import rampytyspeli.ohjelmalogiikka.Highscore.Pistetulos;
 import rampytyspeli.ohjelmalogiikka.HighscoreIkkunanPoistuNapinKuuntelija;
+import java.nio.charset.Charset;
 
 /**
  *Ennätyspisteiden ikkuna. 
@@ -32,6 +30,9 @@ public class HighscoreIkkuna implements Runnable {
     private JButton poistu;
     private Highscorelogiikka logiikka;
     
+    /**
+     * Konstruktori.
+     */
     public HighscoreIkkuna() {
         this.logiikka = new Highscorelogiikka();
     }
@@ -53,6 +54,12 @@ public class HighscoreIkkuna implements Runnable {
         
     }
     
+    /**
+     * Luo highscoreikkunan komponentit.
+     * Ylärivin teksti, 10 riviä pisteille sekä alarivi poistumisnapille.
+     * @param container
+     * @throws FileNotFoundException 
+     */
     private void luoKomponentit(Container container) throws FileNotFoundException {
         container.setLayout(new GridLayout(12,1));
         this.ylarivi= new JLabel("Ennätyspisteet, 10 parasta");
@@ -63,7 +70,9 @@ public class HighscoreIkkuna implements Runnable {
         top10 = logiikka.haeHighscore("Highscore.txt").toArray(top10);
         int i=0;
         while (i<10) {
-            container.add(new JLabel(top10[i].getNimi() + " - " + top10[i].getPisteet()));
+            String nimi =top10[i].getNimi();
+            JLabel rivi = new JLabel(nimi + " - " + top10[i].getPisteet());
+            container.add(rivi);
             i++;
         }
         container.add(this.poistu);
@@ -88,6 +97,7 @@ public class HighscoreIkkuna implements Runnable {
     
     /**
      * Sulkee ikkunan.
+     * Poistu-nappi kutsuu tätä metodia.
      */
     public void sulje() {
         this.frame.dispose();

@@ -11,11 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import static java.awt.Font.PLAIN;
 import static java.awt.Font.SANS_SERIF;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import javax.swing.JTextField;
 import rampytyspeli.Kayttoliittyma.Kayttoliittyma;
-import rampytyspeli.ohjelmalogiikka.Highscore.Highscorelogiikka;
 import rampytyspeli.ohjelmalogiikka.PisteidenLisaysListener;
 
 /**
